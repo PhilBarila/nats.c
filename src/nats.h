@@ -7041,6 +7041,17 @@ kvEntry_Delta(kvEntry *e);
 NATS_EXTERN kvOperation
 kvEntry_Operation(kvEntry *e);
 
+/** \brief Returns the subject set in this message.
+ *
+ * Returns the subject set on that message.
+ *
+ * \warning The string belongs to the message and must not be freed.
+ * Copy it if needed.
+ * @param e the pointer to the #kvEntry object.
+ */
+NATS_EXTERN const char*
+kvEntry_Subject(kvEntry *e);
+
 /** \brief Destroys the KeyValue entry object.
  *
  * Releases memory allocated for this #kvEntry object.

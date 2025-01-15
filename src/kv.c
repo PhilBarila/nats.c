@@ -1535,6 +1535,12 @@ kvEntry_Operation(kvEntry *e)
     return (e == NULL ? 0 : e->op);
 }
 
+const char*
+kvEntry_Subject(kvEntry *e)
+{
+    return (e == NULL ? NULL : natsMsg_GetSubject(e->msg));
+}
+
 void
 kvEntry_Destroy(kvEntry *e)
 {
